@@ -9,13 +9,19 @@
 
     <link type="text/css" rel="stylesheet" href="<?= base_url('assets/style.css') ?>"/>
 
+
     <?php
-    foreach ($css_files as $file): ?>
-        <link type="text/css" rel="stylesheet" href="<?=$file; ?>"/>
-    <?php endforeach; ?>
-    <?php foreach ($js_files as $file): ?>
-        <script src="<?=$file; ?>"></script>
-    <?php endforeach;
+    if(isset($custom_view)): ?>
+        <script src="<?= base_url('assets/jquery-3.0.0.min.js') ?>"></script>
+        <script src="<?= base_url('assets/main.js') ?>"></script>
+    <?php else:
+        foreach ($css_files as $file): ?>
+        <link type="text/css" rel="stylesheet" href="<?= $file; ?>"/>
+        <?php endforeach; ?>
+        <?php foreach ($js_files as $file): ?>
+            <script src="<?= $file; ?>"></script>
+        <?php endforeach;
+    endif;
     ?>
 </head>
 <body>
@@ -35,7 +41,7 @@ if ($this->session->flashdata('test')) {
         <li><a href='<?= base_url('panel/add_to_event') ?>'>Add participant to event</a></li>
 
         <li class="right special">
-            <a href='<?= base_url('panel/simulate') ?>'>
+            <a href='<?= base_url('simulate') ?>'>
                 <b>Simulate checkpoints</b></a>
         </li>
     </ul>
