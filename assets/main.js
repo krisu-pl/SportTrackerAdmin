@@ -1,3 +1,7 @@
+var CONFIG = {
+    apiURL: 'http://localhost:3000/api'
+}
+
 $(document).ready(function () {
 
     /**
@@ -58,18 +62,26 @@ $(document).ready(function () {
         return ("0" + number).slice(-2)
     }
 
-
-    function activateCheckpoint(){
-
-    }
-
     /**
      * Onclick event to save time for a specific checkpoint and participant.
      * Simulates participant crossing the checkpoint line.
      */
     $('#event-table').on('click', '.checkpoint_activate_btn', function(){
         var time = $('#event-time').html();
-        console.log(time);
-        $(this).html(time).removeClass('checkpoint_activate_btn');
-    })
+        var el = $(this);
+
+        var data = {
+            checkpoint_id: el.data('checkpointid'),
+            participant_id: el.data('participantid'),
+            time: time
+        };
+
+        console.log(data);
+
+        $.post(CONFIG.apiURL + '/checkpoint', data, function() {
+            el.html(time).removeClass('checkpoint_activate_btn');
+        }).fail(function() {
+            alert('Error: API server is not available.');
+        })
+    });
 });
