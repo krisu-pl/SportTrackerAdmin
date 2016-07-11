@@ -1,6 +1,6 @@
 var CONFIG = {
     apiURL: 'http://localhost:3000/api'
-}
+};
 
 $(document).ready(function () {
 

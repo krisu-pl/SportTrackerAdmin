@@ -25,6 +25,7 @@ class Simulate extends CI_Controller {
     {
         $this->load->model('event_model');
         $this->load->model('checkpoint_model');
+        $this->load->model('participant_model');
 
         // Get event details (name, start date)
         $event = $this->event_model->getDetails($id);
@@ -33,10 +34,10 @@ class Simulate extends CI_Controller {
             show_404();
 
         // Get data of participants in the event
-        $participants = $this->event_model->getParticipants($id);
+        $participants = $this->participant_model->getForEvent($id);
 
         // Get checkpoints of the event
-        $checkpoints = $this->event_model->getCheckpoints($id);
+        $checkpoints = $this->checkpoint_model->getForEvent($id);
 
         // Get times for each checkpoint
         // Indexes of the returned array are checkpoints ids.

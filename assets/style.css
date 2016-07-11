@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     min-width: 1200px;
-    font-family: Roboto, Arial;
+    font-family: Roboto, Arial, sans-serif;
 }
 
 .padding-20 {
