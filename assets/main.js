@@ -71,8 +71,9 @@ $(document).ready(function () {
         var el = $(this);
 
         var data = {
-            checkpoint_id: el.data('checkpointid'),
-            participant_id: el.data('participantid'),
+            event_id: el.data('event-id'),
+            checkpoint_id: el.data('checkpoint-id'),
+            participant_id: el.data('participant-id'),
             time: time
         };
 

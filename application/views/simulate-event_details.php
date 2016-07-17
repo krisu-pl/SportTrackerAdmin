@@ -34,8 +34,9 @@
                         <?php else: ?>
                             <span
                                 class="checkpoint_activate_btn"
-                                data-checkpointid="<?= $checkpoint->id ?>"
-                                data-participantid="<?= $participant->id ?>"
+                                data-event-id="<?= $event->id ?>"
+                                data-checkpoint-id="<?= $checkpoint->id ?>"
+                                data-participant-id="<?= $participant->id ?>"
                                 >
                                 activate
                             </span>
