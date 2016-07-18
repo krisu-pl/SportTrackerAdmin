@@ -1,5 +1,5 @@
 var CONFIG = {
-    apiURL: 'http://localhost:3000/api'
+    apiURL: 'http://localhost:3001/api'
 };
 
 $(document).ready(function () {
