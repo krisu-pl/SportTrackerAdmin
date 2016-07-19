@@ -141,6 +141,7 @@ class Panel extends CI_Controller {
         $crud->columns('participant_id', 'event_id', 'category_id', 'starting_number', 'pin');
         $crud->required_fields('participant_id', 'event_id', 'category_id', 'starting_number');
         $crud->field_type('starting_number', 'integer');
+        $crud->field_type('pin', 'hidden');
 
         $crud->set_relation('participant_id', 'participants', 'name');
         $crud->set_relation('event_id', 'events', 'name');
