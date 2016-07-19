@@ -138,7 +138,7 @@ class Panel extends CI_Controller {
         $crud->set_table('connect_participants_events');
         $crud->set_subject('participant to an event');
 
-        $crud->columns('participant_id', 'event_id', 'category_id', 'starting_number');
+        $crud->columns('participant_id', 'event_id', 'category_id', 'starting_number', 'pin');
         $crud->required_fields('participant_id', 'event_id', 'category_id', 'starting_number');
         $crud->field_type('starting_number', 'integer');
 
